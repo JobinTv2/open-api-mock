@@ -1,6 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiOkResponse, ApiProperty } from '@nestjs/swagger';
-import { CreateCatDto } from './dto/mock.dto';
+import { ApiOkResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UserService } from './user.service';
 

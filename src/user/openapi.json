@@ -1,0 +1,101 @@
+{
+    "openapi":"3.0.0",
+    "paths":{
+       "/":{
+          "get":{
+             "operationId":"AppController_getHello",
+             "parameters":[
+                
+             ],
+             "responses":{
+                "200":{
+                   "description":""
+                }
+             }
+          }
+       },
+       "/user":{
+          "get":{
+             "operationId":"UserController_GetUsers",
+             "summary":"",
+             "description":"",
+             "parameters":[
+                
+             ],
+             "responses":{
+                "200":{
+                   "description":"The user records",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            "type":"array",
+                            "items":{
+                               "$ref":"#/components/schemas/UserDto"
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    },
+    "info":{
+       "title":"Users example",
+       "description":"The users API description",
+       "version":"1.0",
+       "contact":{
+          
+       }
+    },
+    "tags":[
+       {
+          "name":"users",
+          "description":""
+       }
+    ],
+    "servers":[
+       
+    ],
+    "components":{
+       "schemas":{
+          "UserDto":{
+             "type":"object",
+             "properties":{
+                "id":{
+                   "type":"number",
+                   "example":1
+                },
+                "name":{
+                   "type":"string",
+                   "example":"Glenna Reicher"
+                },
+                "username":{
+                   "type":"string",
+                   "example":"Delphine"
+                },
+                "email":{
+                   "type":"string",
+                   "example":"Chaim_McDermott@dana.io"
+                },
+                "phone":{
+                   "type":"string",
+                   "example":"(775)976-6794 x41206"
+                },
+                "website":{
+                   "type":"string",
+                   "example":"conrad.com"
+                }
+             },
+             "required":[
+                "id",
+                "name",
+                "username",
+                "email",
+                "phone",
+                "website"
+             ]
+          }
+       }
+    }
+ }

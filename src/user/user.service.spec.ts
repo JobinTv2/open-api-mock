@@ -14,6 +14,16 @@ describe('GET /user', () => {
   });
 });
 
+describe('GET /user/{id}', () => {
+  it('should satisfy OpenAPI spec', async () => {
+    const res = await axios.get('http://localhost:3000/user/1');
+    expect(res.status).toEqual(200);
+    const user = users.find((usr) => usr.id === Number(1));
+    expect(res.data).toEqual(user);
+    expect(res).toSatisfyApiSpec();
+  });
+});
+
 describe('UserService', () => {
   let service: UserService;
 

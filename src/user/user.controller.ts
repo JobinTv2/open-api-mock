@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { ApiOkResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UserService } from './user.service';
@@ -14,5 +14,10 @@ export class UserController {
   })
   GetUsers() {
     return this.userService.getUsers();
+  }
+
+  @Get(':id')
+  findOne(@Param() params) {
+    return this.userService.findById(params.id);
   }
 }
